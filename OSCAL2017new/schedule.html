@@ -70,7 +70,7 @@
         day-filter and time-filter classes are intended for searching
         text across the page.
         --------------------------------------------------------------- -->
-        <p class="date-list"><span id="tabs" class="col-md-6 tabs no-js"><span class="tabs-nav"><a id="2017-05-13" href="#" class="2017-05-13 date-button tabs-nav-link">Saturday, 13th May</a> <a id="2017-05-14" href="#" class="2017-05-14 date-button tabs-nav-link">Sunday, 14th May</a></span></span>
+        <p class="date-list"><span id="tabs" class="col-md-5 tabs no-js"><span class="tabs-nav"><a id="2017-05-13" href="#" class="2017-05-13 date-button tabs-nav-link">Saturday, 13th May</a> <a id="2017-05-14" href="#" class="2017-05-14 date-button tabs-nav-link">Sunday, 14th May</a></span></span>
         </p><span class="show-button-filter"><button class="btn btn-primary" id="starred">Show Starred</button> </span><span class="list-filter view-button"><button class="btn" id="list">List View</button> </span><span class="calendar-filter view-button"><button class="btn unselect" id="calendar">Calendar View</button>
                  <button type="button" class="btn btn-default export-png"><i class="fa fa-download"></i></button>
         </span><span class="search-filter"><input class="fossasia-filter" type="text" placeholder="Search"></span>
@@ -10228,8 +10228,7 @@
                 onrendered: function (canvas) {
                     canvas.id = "generated-canvas";
                     canvas.toBlob(function (blob) {
-                        saveAs(blob, "timeline.png");
-                  //       $timeline.attr('style', currentStyle);
+                        saveAs(blob, ''+$timeline.attr('class')+ '.png');
                     });
                 },
             });
