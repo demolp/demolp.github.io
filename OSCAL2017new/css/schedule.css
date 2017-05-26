@@ -424,7 +424,12 @@ a .speaker-social {
 }
 
 #track-list {
-    margin-bottom: 8%
+    margin-bottom: 8%;
+    background-color: white;
+}
+
+.day-filter {
+         background-color: white;
 }
 
 .left-border {
@@ -1556,7 +1561,9 @@ a.skip:active, a.skip:focus, a.skip:hover {
 }
 
 .calendar {
-    margin-top: 13px
+    margin-top: 13px;
+    display: block;
+background-color: white;
 }
 
 .room, .rooms, .times {

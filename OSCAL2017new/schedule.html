@@ -10060,6 +10060,7 @@
             var flag = 0;
             var isAdded = 0;
             var isCalendarView = false;
+            var $timeline;
 
 
             $(function() {
@@ -10212,13 +10213,18 @@
 
 
             $(".export-png").click(function () {
-            var $timeline = $('.calendar');
-            console.log("I am here");
-         // //    $('.calendar').addClass('fullwidth');
-         //    var width = $('.calendar').width();
-         // //    var currentStyle = $timeline.attr('style');
-         //    $timeline.width(width);
-            html2canvas($timeline[0], {
+             if (isCalendarView === true) {
+                  $('.calendar').each(function() {
+                  if($(this).attr('class').split(' ').indexOf('hide')<=0)
+                            $timeline = $(this);
+                   });
+              }else {
+                       $('.day-filter').each(function() {
+                      if($(this).attr('class').split(' ').indexOf('hide')<=0)
+                               $timeline = $(this);
+                       });
+                 }
+            html2canvas($timeline, {
                 onrendered: function (canvas) {
                     canvas.id = "generated-canvas";
                     canvas.toBlob(function (blob) {
