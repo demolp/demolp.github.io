@@ -27264,6 +27264,7 @@
                 $(this).parent().parent().find('.speakers-inputbox').val(window.location.href.split('#')[0] + '#' + val.split('#').pop());
             });
             $('.fossasia-filter:first').bind("keyup change",function() {
+                    console.log("i was changed");
                 var filterVal = $(this).val();
                 if (filterVal) {
                     $('.day-filter').each(function() {
@@ -27271,14 +27272,21 @@
                         $(this).find('.time-filter').each(function() {
                             var flag = 1;
                             $(this).find('.track-inline').each(function() {
+                                     console.log("found something");
                                 if ($(this).find('.tip-description').text().toUpperCase().indexOf(filterVal.toUpperCase()) < 0 &&
                                     $(this).find('.session-speakers-list a p span').text().toUpperCase().indexOf(filterVal.toUpperCase()) < 0 &&
                                     $(this).find('.session-speakers-more').text().toUpperCase().indexOf(filterVal.toUpperCase()) < 0 &&
                                     $(this).find('.event').text().toUpperCase().indexOf(filterVal.toUpperCase()) < 0 &&
                                     $(this).find('.speaker-name').text().toUpperCase().indexOf(filterVal.toUpperCase()) < 0) {
+                                    console.log("nahin milne wale ko hide kiya");
                                     $(this).hide();
                                 } else {
-                                    if ($(this).is(':visible')) {
+                                    if ($(this).find('.tip-description').text().toUpperCase().indexOf(filterVal.toUpperCase()) >=0 ||
+                                        $(this).find('.session-speakers-list a p span').text().toUpperCase().indexOf(filterVal.toUpperCase()) >= 0 ||
+                                        $(this).find('.session-speakers-more').text().toUpperCase().indexOf(filterVal.toUpperCase()) >= 0 ||
+                                        $(this).find('.event').text().toUpperCase().indexOf(filterVal.toUpperCase()) >= 0 ||
+                                        $(this).find('.speaker-name').text().toUpperCase().indexOf(filterVal.toUpperCase()) >= 0) {
+                                        console.log(" milne wale ko show kiya");
                                         flag = 0;
                                         $(this).show();
                                     }
