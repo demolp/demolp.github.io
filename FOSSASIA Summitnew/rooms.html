@@ -15442,9 +15442,14 @@
                         $(this).find(".venue-filter").each(function() {
                             var t = 1;
                             $(this).find(".room-filter").each(function() {
-                                $(this).find(".tip-description").text().toUpperCase().indexOf(s.toUpperCase()) < 0 && $(this).find(".session-speakers-list a span").text().toUpperCase().indexOf(s.toUpperCase()) < 0 &&
-                                    $(this).find(".session-speakers-more").text().toUpperCase().indexOf(s.toUpperCase()) < 0 && $(this).find(".event").text().toUpperCase().indexOf(s.toUpperCase()) < 0 ? $(this).hide() :
-                                    $(this).is(":visible") && (i = 0, t = 0, $(this).show())
+
+                          if ($(this).find(".tip-description").text().toUpperCase().indexOf(s.toUpperCase()) < 0 && $(this).find(".session-speakers-list a span").text().toUpperCase().indexOf(s.toUpperCase()) < 0 &&
+                              $(this).find(".session-speakers-more").text().toUpperCase().indexOf(s.toUpperCase()) < 0 && $(this).find(".event").text().toUpperCase().indexOf(s.toUpperCase()) < 0 ) {
+                                   $(this).hide();
+                          }else if ($(this).find(".tip-description").text().toUpperCase().indexOf(s.toUpperCase()) >= 0 || $(this).find(".session-speakers-list a span").text().toUpperCase().indexOf(s.toUpperCase()) >=0 ||
+                              $(this).find(".session-speakers-more").text().toUpperCase().indexOf(s.toUpperCase()) >= 0 || $(this).find(".event").text().toUpperCase().indexOf(s.toUpperCase()) >= 0) {
+                                   i = 0, t = 0, $(this).show();
+                          }
                             }), 1 == t ? $(this).hide() : $(this).show()
                         }), 1 == i ? $(this).hide() : $(this).show()
                     }) : o ? i() : $(".date-filter").each(function() {
