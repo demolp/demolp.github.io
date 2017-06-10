@@ -1368,14 +1368,14 @@ a .speaker-social {
     padding: 10px;
     padding-left: 25px;
     font-size: small;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 /*//////////////////////////////*/
 .search-filter > label > .fa {
          position: absolute;
          padding-left: 8px;
-         padding-top: 12px;
+         padding-top: 13px;
          padding-right: 3px;
 
 }
